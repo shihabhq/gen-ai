@@ -22,25 +22,25 @@ const Dashboard = () => {
     <div className="min-h-screen relative flex ">
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-30 z-40 md:hidden"
+          className="fixed inset-0 bg-opacity-30 z-40 md:hidden"
           onClick={closeMenu}
         />
       )}
 
       <div
-        className="absolute cursor-pointer top-[4%] left-[4%] z-50 md:hidden"
+        className="absolute cursor-pointer top-[4%] left-[4%] ml-4 z-50 lg:hidden"
         onClick={toggleMenu}
       >
         <FaBars size={28} />
       </div>
 
       <div
-        className={`bg-softBlue z-50 fixed md:static ${
+        className={`bg-softBlue z-50 fixed lg:static ${
           open ? "left-0" : "-left-full"
-        } top-0 p-4 py-20 flex justify-start w-fit min-w-[18vw] h-full items-start 
+        } top-0 p-4 py-20 flex justify-start w-fit sm:min-w-[300px] h-full items-start 
           flex-col gap-4 transition-all duration-300`}
       >
-        <div className="self-end  md:hidden">
+        <div className="self-end  lg:hidden">
           <button
             onClick={() => setOpen(false)}
             className="text-gray-500 hover:text-gray-900 p-2"

@@ -1,19 +1,41 @@
 import React from "react";
-import { Link } from "react-router";
+import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router";
+import { getAllHistory } from "../../store/slices/chatSlice";
 
 const History = () => {
+  const allHistory = useSelector(getAllHistory);
+  console.log(allHistory);
+
+  const HistoryLink = ({ history }) => {
+    return (
+      <NavLink
+        to={`/chat/${history.id}`}
+        className={({ isActive }) =>
+          `text-base py-2 w-full inline-block  px-2 ${
+            isActive
+              ? "bg-[#0A1B3A] text-white rounded-l-sm border-r-2 border-smallBtn"
+              : "hover:bg-[#0A1B3A] rounded-sm"
+          }`
+        }
+      >
+        {history?.question.slice(0, 20)}...
+      </NavLink>
+    );
+  };
+
   return (
-    <div className="mt-2 h-full">
-      <h1 className="font-semibold text-sm">History</h1>
+    <div className="mt-5 h-full">
+      <h1d className="font-semibold text-sm ml-2">History</h1d>
       <div className=" flex flex-col gap-1 mt-2 mb-10 h-full overflow-auto">
-        <Link className="text-base py-2 w-full border-r-2 border-btn
+        {/* <Link className="text-base py-2 w-full border-r-2 border-btn
          inline-block rounded-l-sm bg-[#0A1B3A] px-2">
             We got the...
-        </Link>
-        <Link className="text-base py-2 w-full
-         inline-block  rounded-sm hover:bg-[#0A1B3A] px-2">
-            We got the...
-        </Link>
+        </Link> */}
+        {allHistory.length > 0 &&
+          allHistory.map((history) => {
+            return <HistoryLink key={history.id} history={history} />;
+          })}
       </div>
     </div>
   );
