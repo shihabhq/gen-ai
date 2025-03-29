@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import { IoMdClose } from "react-icons/io";
 
-const HistoryPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const HistoryPage = ({ open, setOpen }) => {
+  return <h1>history</h1>;
+};
 
-export default HistoryPage
+export default HistoryPage;

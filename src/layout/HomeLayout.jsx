@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import Dashboard from "../components/dashboard/Dashboard";
+import { Outlet } from "react-router";
 
 const HomeLayout = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div className="min-h-screen relative flex overflow-hidden">
+      <Dashboard />
 
-export default HomeLayout
+      <div className="flex-grow w-full ">
+        <Outlet />
+      </div>
+    </div>
+  );
+};
+
+export default HomeLayout;
