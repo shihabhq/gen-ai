@@ -6,7 +6,7 @@ A react and Redux built analytics chat application UI that enables not technical
 
 ## Live Demo
 
-[ View Live Demo]()
+[ View Live Demo](https://growth-genai.netlify.app/)
 
 ## Key Features
 
