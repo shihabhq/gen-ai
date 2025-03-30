@@ -1,5 +1,29 @@
 import { Box, Skeleton } from "@mui/material";
 
+export function Loading({ type }) {
+  switch (type) {
+    case "BAR":
+      return <BarChartSkeleton />;
+    case "LINE":
+      return <LineChartSkeleton />;
+    case "PIE":
+      return <PieChartSkeleton />;
+    case "SCATTER":
+      return <ScatterChartSkeleton />;
+    case "HORIZONTAL":
+      return <HorizontalBarSkeleton />;
+    default:
+      return (
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={400}
+          className="bg-[#1e293b] rounded-lg"
+        />
+      );
+  }
+}
+
 export function BarChartSkeleton() {
   return (
     <div className="relative h-[400px] w-full">

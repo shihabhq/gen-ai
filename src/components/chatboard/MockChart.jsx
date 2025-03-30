@@ -3,6 +3,23 @@ import { LineChart } from "@mui/x-charts/LineChart";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { ScatterChart } from "@mui/x-charts/ScatterChart";
 
+export function DynamicChart({ type }) {
+  switch (type) {
+    case "BAR":
+      return <BarChartComponent />;
+    case "LINE":
+      return <LineChartComponent />;
+    case "PIE":
+      return <PieChartComponent />;
+    case "SCATTER":
+      return <ScatterChartComponent />;
+    case "HORIZONTAL":
+      return <HorizontalBarChartComponent />;
+    default:
+      return <BarChartComponent />;
+  }
+}
+
 export function BarChartComponent() {
   return (
     <BarChart
@@ -233,5 +250,3 @@ export function HorizontalBarChartComponent() {
     />
   );
 }
-
-

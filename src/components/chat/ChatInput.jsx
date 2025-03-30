@@ -16,15 +16,11 @@ const ChatInput = () => {
 
   const handleSubmit = () => {
     if (!chatInput) return;
-    if (!showResult) {
-      const randomIdx = Math.floor(Math.random() * 5);
-      const targetResult = allGraphs[randomIdx];
-      setShowResult(targetResult);
-    }
+    const resultToUse = showResult || allGraphs[Math.floor(Math.random() * 5)];
 
     setChatInput("");
     setShowSuggestions(false);
-    dispatch(updateChat({ question: chatInput, result: showResult }));
+    dispatch(updateChat({ question: chatInput, result: resultToUse }));
     setShowResult("");
     setDeepthink(false);
   };

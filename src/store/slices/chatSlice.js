@@ -32,24 +32,11 @@ const chatSlice = createSlice({
       state.history.unshift(historyObj);
       state.question = action.payload.question;
       state.result = action.payload.result;
+      state.loading = true;
     },
     //this reducer updates the loading state
     setLoading: (state, action) => {
-      state.loading = action.payload.loading;
-    },
-
-    //to get single history
-
-    //clears the whole history
-    clearHistory: (state) => {
-      state.history = [];
-    },
-
-    //resets everything
-    resetChat: (state) => {
-      state.question = "";
-      state.result = "";
-      state.loading = false;
+      state.loading = action.payload;
     },
   },
 });

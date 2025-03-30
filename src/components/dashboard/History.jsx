@@ -5,7 +5,6 @@ import { getAllHistory } from "../../store/slices/chatSlice";
 
 const History = () => {
   const allHistory = useSelector(getAllHistory);
-  console.log(allHistory);
 
   const HistoryLink = ({ history }) => {
     return (
@@ -28,10 +27,6 @@ const History = () => {
     <div className="mt-5 h-full">
       <h1 className="font-semibold text-sm ml-2">History</h1>
       <div className=" flex flex-col gap-1 mt-2 mb-10 h-full overflow-auto">
-        {/* <Link className="text-base py-2 w-full border-r-2 border-btn
-         inline-block rounded-l-sm bg-[#0A1B3A] px-2">
-            We got the...
-        </Link> */}
         {allHistory.length > 0 &&
           allHistory.map((history) => {
             return <HistoryLink key={history.id} history={history} />;
