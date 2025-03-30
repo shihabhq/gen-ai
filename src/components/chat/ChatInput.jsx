@@ -5,6 +5,8 @@ import Suggestions from "./Suggestions";
 import { useDispatch } from "react-redux";
 import { updateChat } from "../../store/slices/chatSlice";
 
+const allGraphs = ["BAR", "LINE", "PIE", "SCATTER", "HORIZONTAL"];
+
 const ChatInput = () => {
   const dispatch = useDispatch();
   const [deepthink, setDeepthink] = useState(false);
@@ -14,6 +16,11 @@ const ChatInput = () => {
 
   const handleSubmit = () => {
     if (!chatInput) return;
+    if (!showResult) {
+      const randomIdx = Math.floor(Math.random() * 5);
+      const targetResult = allGraphs[randomIdx];
+      setShowResult(targetResult);
+    }
 
     setChatInput("");
     setShowSuggestions(false);
