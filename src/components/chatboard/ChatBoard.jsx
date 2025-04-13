@@ -62,14 +62,14 @@ const ChatBoard = () => {
               color="#4fa94d"
               ariaLabel="infinity-spin-loading"
             />{" "}
-            GEN AI Thinking...
+            AI Thinking...
           </div>
           <Loading type={result} />
         </div>
       ) : result ? (
         // Show chart when result exists
         <>
-          <div className=" text-sm font-bold">GEN AI</div>
+          <div className=" text-sm font-bold">GENERATIVE AI</div>
           <DynamicChart type={result} />
         </>
       ) : (

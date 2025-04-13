@@ -34,7 +34,7 @@ px-2 rounded-lg items-center gap-2 justify-start"
 
 const Suggestions = ({ setChatInput, setShowResult }) => {
   return (
-    <ul className="px-5 pb-4 absolute z-40 bg-deepBlue rounded-b-lg flex flex-col gap-1">
+    <ul className="px-5 pb-4 absolute md:w-[80%] max-w-[800px] md:mx-auto z-40 bg-deepBlue rounded-b-lg flex flex-col gap-1">
       {allSuggestions.map((suggestion) => {
         return (
           <SuggestionList

@@ -1,8 +1,8 @@
-# Gen AI Analytics Dashboard
+# Generative AI Analytics Dashboard
 
 A react and Redux built analytics chat application UI that enables not technical users to write complex business queries in natural human language and the App shows a visual representation using charts and graphs. This app has a modern UI with AI loading simulation, query history persistence and structured code. It took sometime to research and prepare system design and then the functional application became live.
 
-![GEN AI Preview](/public/image.png)
+![GENERATIVE AI Preview](/public/image.png)
 
 ## Live Demo
 
@@ -19,7 +19,7 @@ A react and Redux built analytics chat application UI that enables not technical
 ## System Design
 
 It took sometime to prepare the system design and after that the whole process became easy
-![GEN AI Preview](/public/gen%20ai.png)
+![GENERATIVE AI Preview](/public/gen%20ai.png)
 
 ## Tech Stack:
 

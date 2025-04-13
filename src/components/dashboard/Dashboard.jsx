@@ -50,14 +50,8 @@ const Dashboard = () => {
         </div>
 
         <Link to={"/"} className="flex items-center gap-2 justify-start">
-          <img
-            src={
-              "https://growthgear.in/wp-content/uploads/2024/09/cropped-Group-29-Copy1-32x32.png"
-            }
-            className=""
-            alt="logo"
-          />
-          <h1 className="text-2xl font-bold uppercase ">Gen AI</h1>
+  
+          <h1 className="text-2xl font-bold uppercase ">Generative AI</h1>
         </Link>
 
         <div className="w-full">
