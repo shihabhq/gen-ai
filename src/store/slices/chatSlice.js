@@ -38,6 +38,10 @@ const chatSlice = createSlice({
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
+    resetResult: (state) => {
+      state.result = "";
+      state.question = "";
+    },
   },
 });
 
@@ -53,7 +57,7 @@ export const getTheCurrentChat = (state) => ({
   loading: state.chat.loading,
 });
 
-export const { clearHistory, resetChat, setLoading, updateChat } =
+export const { clearHistory, resetResult, setLoading, updateChat } =
   chatSlice.actions;
 
 export default chatSlice.reducer;

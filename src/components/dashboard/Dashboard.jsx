@@ -6,9 +6,12 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router";
 import { PiPlus } from "react-icons/pi";
 import { RiChatNewLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { resetResult } from "../../store/slices/chatSlice";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => {
     setOpen((prev) => !prev);
@@ -50,13 +53,15 @@ const Dashboard = () => {
         </div>
 
         <Link to={"/"} className="flex items-center gap-2 justify-start">
-  
           <h1 className="text-2xl font-bold uppercase ">Generative AI</h1>
         </Link>
 
         <div className="w-full">
           <Link
             to={"/"}
+            onClick={() => {
+              dispatch(resetResult());
+            }}
             className="w-full mx-auto text-start px-2 rounded-sm py-3
             transition-all flex items-center justify-between active:scale-95 bg-btn text-white text-sm font-semibold cursor-pointer
             "
